@@ -1,15 +1,20 @@
-import { useContext } from 'react'
-
-// context
-import _appContext from '../context/_appContext'
+import { useEffect, useRef } from "react";
 
 export default function Home() {
-
-  const { mobile, darkMode, toggleDarkMode } = useContext(_appContext)
-
-  return <>
-    <div>
-      <h1>Home</h1>
-    </div>
-  </>
+  return (
+    <>
+      <style jsx>{`
+        .snap-x::-webkit-scrollbar {
+          // display: none;
+        }
+      `}</style>
+      <div className="h-full pt-[4rem]">
+        <div className="w-screen flex overflow-x-auto h-96 bg-pink-400 px-[25vw] gap-8 snap-x">
+          <div className="bg-sky-500 w-[calc(100vw/2)] aspect-video snap-center"></div>
+          <div className="bg-sky-500 w-[calc(100vw/2)] aspect-video snap-center"></div>
+          <div className="bg-sky-500 w-[calc(100vw/2)] aspect-video snap-center"></div>
+        </div>
+      </div>
+    </>
+  );
 }
