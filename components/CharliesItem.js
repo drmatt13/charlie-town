@@ -3,9 +3,9 @@ import Link from "next/link";
 const CharliesItem = ({ data: { url, name } }) => {
   return (
     <Link href={url}>
-      <div className="relative mb-12 flex justify-center select-none float-left">
+      <div className="relative mb-12 w-64 flex justify-center select-none float-left">
         <img
-          className="cursor-pointer absolute top-0 h-full blur-sm"
+          className="pointer-events-none absolute top-0 h-full blur-sm"
           src={`http://www.google.com/s2/favicons?domain=${url}`}
           alt={name}
           draggable="false"
@@ -16,8 +16,10 @@ const CharliesItem = ({ data: { url, name } }) => {
               1px 1px 0 #000;
           }
         `}</style>
-        <div className="w-64 h-24 px-12 font-bold text-white text-2xl flex justify-center items-center z-10 pointer-events-none truncate">
-          {name}
+        <div className="w-24 h-24 mx-20 group cursor-pointer">
+          <div className="absolute w-64 h-24 left-0 font-bold text-white text-2xl group-hover:text-3xl flex justify-center items-center z-10 pointer-events-none truncate transition-all">
+            {name}
+          </div>
         </div>
       </div>
     </Link>
