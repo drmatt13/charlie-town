@@ -1,18 +1,40 @@
-import { useEffect, useRef } from "react";
+import { useState } from "react";
+import Head from "next/head";
 
-export default function Home() {
+// components
+import CharliesItem from "../components/CharliesItem";
+
+export default function Index() {
+  const [data, setData] = useState([
+    {
+      name: "Facebook",
+      url: "http://www.facebook.com/",
+    },
+    {
+      name: "Instagram",
+      url: "http://www.instagram.com/",
+    },
+    {
+      name: "Youtube",
+      url: "http://www.youtube.com/",
+    },
+    {
+      name: "Gmail",
+      url: "http://www.gmail.com/",
+    },
+  ]);
+
   return (
     <>
-      <style jsx>{`
-        .snap-x::-webkit-scrollbar {
-          // display: none;
-        }
-      `}</style>
-      <div className="h-full pt-[4rem]">
-        <div className="w-screen flex overflow-x-auto h-96 bg-pink-400 px-[25vw] gap-8 snap-x">
-          <div className="bg-sky-500 w-[calc(100vw/2)] aspect-video snap-center"></div>
-          <div className="bg-sky-500 w-[calc(100vw/2)] aspect-video snap-center"></div>
-          <div className="bg-sky-500 w-[calc(100vw/2)] aspect-video snap-center"></div>
+      <Head>
+        <title>Charlie Town</title>
+      </Head>
+      <h1 className="p-8 text-5xl font-bold">fucking homepage</h1>
+      <div className="text-center mt-8">
+        <div className="container inline-flex">
+          {data.map((data, index) => (
+            <CharliesItem key={index} data={data} />
+          ))}
         </div>
       </div>
     </>
