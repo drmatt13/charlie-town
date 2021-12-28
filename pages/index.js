@@ -31,7 +31,7 @@ export default function Index() {
       </Head>
       <h1 className="p-8 text-5xl font-bold">fucking homepage</h1>
       <div className="text-center mt-8">
-        <div className="container inline-flex">
+        <div className="container">
           {data.map((data, index) => (
             <CharliesItem key={index} data={data} />
           ))}
