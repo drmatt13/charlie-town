@@ -69,6 +69,13 @@ function MyApp({ Component, pageProps }) {
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
+        <meta property="og:site_name" content="Charlie Town" />
+        <meta property="og:title" content="Are you ready?" />
+        <meta property="og:description" content="Smoke dank" />
+        <meta
+          property="og:image"
+          content="https://charlie-town.vercel.app/og-image.jpg"
+        />
       </Head>
       <_appContext.Provider value={{ mobile, darkMode, toggleDarkMode }}>
         <Component {...pageProps} />
